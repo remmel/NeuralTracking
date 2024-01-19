@@ -743,7 +743,7 @@ class DeformNet(torch.nn.Module):
                 if opt.gn_print_timings: print("\t\tLinear solve: {:.3f} s".format(timer() - timer_solve_start))
                     
                 # Increment the current rotation and translation.
-                R_inc = kornia.angle_axis_to_rotation_matrix(x[:opt_num_nodes_i*3].view(opt_num_nodes_i, 3))
+                R_inc = kornia.geometry.angle_axis_to_rotation_matrix(x[:opt_num_nodes_i*3].view(opt_num_nodes_i, 3))
                 t_inc = x[opt_num_nodes_i*3:].view(opt_num_nodes_i, 3, 1)
 
                 R_current = torch.matmul(R_inc, R_current)

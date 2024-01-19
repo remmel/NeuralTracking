@@ -26,7 +26,15 @@ You can either choose to setup your enviromment locally or use a docker with all
 After cloning this repo, `cd` into it and create a conda environment with (hopefully) all required packages:
 
 ```
-conda env create --file resources/env.yml
+conda env create --file environment.yml
+```
+
+or if you prefer manually :
+```shell
+conda create -n nnrt python=3.10
+conda install pytorch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 pytorch-cuda=12.1 -c pytorch -c nvidia
+conda install trimesh scipy imageio tensorflow tensorboardx matplotlib scikit-image pybind11 kornia cupy tqdm -c pytorch -c conda-forge -c open3d-admin
+pip install freetype-py open3d
 ```
 
 #### Install some C++ extensions ([csrc](csrc))

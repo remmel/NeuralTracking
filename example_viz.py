@@ -229,7 +229,7 @@ def main():
     source_pcd.colors = o3d.utility.Vector3dVector(source_colors)
 
     # keep only object using the mask
-    valid_source_mask = np.moveaxis(valid_source_points, 0, -1).reshape(-1).astype(np.bool)
+    valid_source_mask = np.moveaxis(valid_source_points, 0, -1).reshape(-1).astype(np.bool_)
     valid_source_points = source_points[valid_source_mask, :]
     valid_source_colors = source_colors[valid_source_mask, :]
     # source object PointCloud
@@ -322,7 +322,7 @@ def main():
     # Mask
     ####################################
     mask_pred_flat = mask_pred.reshape(-1)
-    valid_correspondences = valid_correspondences.reshape(-1).astype(np.bool)
+    valid_correspondences = valid_correspondences.reshape(-1).astype(np.bool_)
 
     ####################################
     # Correspondences
